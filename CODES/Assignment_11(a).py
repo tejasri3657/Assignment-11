@@ -9,7 +9,7 @@ Original file is located at
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+ 
 #Generate line points
 def line_gen(A,B):
   len =10
@@ -20,25 +20,25 @@ def line_gen(A,B):
     temp1 = A + lam_1[i]*(B-A)
     x_AB[:,i]= temp1.T
   return x_AB
-
+ 
 #Generating and plotting line 5x+8y = 200
 A=np.array([0,25])
 B=np.array([40,0])
 AB=line_gen(A,B)
-plt.plot(AB[0,:],AB[1,:],label='5x+8y=200')
-
+plt.plot(AB[0,:],AB[1,:],label='5x+8y= 200')
+ 
 #Generating and plotting line 10x+8y = 240
 C=np.array([0,30])
 D=np.array([24,0])
 CD=line_gen(C,D)
 plt.plot(CD[0,:],CD[1,:],label='10x+8y=240')
-
-
+ 
+ 
 #Shading Required Region
-x1=[0,8,24]
-y1=[25,20,0]
+x1=[0,24,8,0]
+y1=[0,0,20,25]
 plt.fill(x1,y1)
-
+ 
 #Labelling points
 plt.plot(0,25,'o',color='r')
 plt.text(0,25,'A(0,25)')
@@ -46,7 +46,7 @@ plt.plot(8,20,'o',color='r')
 plt.text(8,20,'B(8,20)')
 plt.plot(24,0,'o',color='r')
 plt.text(24,0,'C(24,0)')
-
+ 
 plt.xlabel('x')
 plt.ylabel('y')
 plt.legend(loc='best')
